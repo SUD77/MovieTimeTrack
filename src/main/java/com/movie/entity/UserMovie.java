@@ -9,9 +9,10 @@ public class UserMovie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    private Long userId;
     private String movieName;
     private Long timeSpent;
+
 
     public UserMovie() {
     }
