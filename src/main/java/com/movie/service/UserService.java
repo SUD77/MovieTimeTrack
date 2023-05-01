@@ -17,4 +17,14 @@ public class UserService {
 
         return user;
     }
+
+    public User createUser(User user) {
+        User userNameExist = this.userRepository.findByUserName(user.getUserName());
+        if(userNameExist != null){
+            System.out.println("User is already there!!");
+            throw new RuntimeException("User already exists");
+        }
+        User newUser = this.userRepository.save(user);
+        return newUser;
+    }
 }
